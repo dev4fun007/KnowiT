@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="bytes.sync.knowit.ScrollingFactsActivity"
+    tools:showIn="@layout/activity_scrolling_facts"
+    android:id="@+id/progress_bar_layout">
+
+
+    <com.vlad1m1r.lemniscate.BernoullisProgressView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:duration="2500"
+        app:hasHole="false"
+        app:lineColor="@color/colorPrimary"
+        app:lineLength="0.6"
+        app:lineLengthChangeable="true"
+        app:maxLineLength="0.8"
+        app:minLineLength="0.4"
+        app:sizeMultiplier="1"
+        app:strokeWidth="5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="128dp"
+        android:id="@+id/progressBar"
+        android:visibility="gone"/>
+
+    <com.github.glomadrian.grav.GravView
+        android:id="@+id/progress_gravView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        app:animationGenerator="com.github.glomadrian.grav.generator.animation.PathAnimator"
+        app:path_variance_from="1dp"
+        app:path_variance_to="20dp"
+        app:path_min_duration="1800"
+        app:path_max_duration="2000"
+        app:path="@string/circle"
+        app:path_original_width="@integer/circle_original_width"
+        app:path_original_height="@integer/circle_original_height"/>
+
+    <TextView
+        android:id="@+id/facts_info_textView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textAppearance="@android:style/TextAppearance.Material.Large" />
+
+</RelativeLayout>

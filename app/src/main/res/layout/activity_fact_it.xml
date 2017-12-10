@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="bytes.sync.knowit.FactiT">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:fitsSystemWindows="true"
+        android:theme="@style/Theme.AppCompat.NoActionBar">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/factit_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="Fact iT"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/colorAccent" />
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/info_cardView_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:minHeight="150dp"
+        android:padding="5dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar">
+
+        <TextView
+            android:id="@+id/facts_textView_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="5dp"
+            android:padding="10dp"
+            android:text="This is a fact about some random number 1"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/info_cardView_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:minHeight="150dp"
+        android:padding="5dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/facts_textView_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="5dp"
+            android:padding="10dp"
+            android:text="This is a fact about some random number 2"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+
+    </android.support.v7.widget.CardView>
+
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/ads_cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:minHeight="50dp"
+        android:padding="5dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        android:visibility="gone">
+
+        <!-- for native ads -->
+
+
+    </android.support.v7.widget.CardView>
+
+
+    <com.github.glomadrian.grav.GravView
+        android:id="@+id/progress_gravView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:visibility="visible"
+        app:animationGenerator="com.github.glomadrian.grav.generator.animation.PathAnimator"
+        app:array_colors="@array/Spectral"
+        app:ball_size_from_size="1dp"
+        app:ball_size_to_size="5dp"
+        app:colorGenerator="com.github.glomadrian.grav.generator.paint.ArrayColorGenerator"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar"
+        app:path="@string/circle"
+        app:path_max_duration="2000"
+        app:path_min_duration="800"
+        app:path_original_height="@integer/circle_original_height"
+        app:path_original_width="@integer/circle_original_width"
+        app:path_variance_from="1dp"
+        app:path_variance_to="20dp" />
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="3">
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:src="@drawable/ic_share_white_48dp"
+                android:id="@+id/share_imageButton"
+                android:scaleType="fitCenter"
+                android:layout_gravity="center_vertical"/>
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:src="@drawable/ic_favorite_white_48dp"
+                android:id="@+id/fav_imageButton"
+                android:scaleType="fitCenter"
+                android:layout_gravity="center_vertical"/>
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:src="@drawable/ic_trending_flat_white_48dp"
+                android:id="@+id/next_imageButton"
+                android:scaleType="fitCenter"
+                android:layout_gravity="center_vertical"/>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</android.support.constraint.ConstraintLayout>

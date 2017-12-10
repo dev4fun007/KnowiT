@@ -1,0 +1,66 @@
+apply plugin: 'com.android.application'
+apply plugin: 'realm-android'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "26.0.2"
+    defaultConfig {
+        applicationId "bytes.sync.knowit"
+        minSdkVersion 22
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.4.0'
+    compile 'com.android.support.constraint:constraint-layout:1.1.0-beta3'
+    compile 'com.android.support:cardview-v7:25.4.0'
+    compile 'com.tuyenmonkey:mkloader:1.4.0'
+    compile 'com.jpardogo.googleprogressbar:library:1.2.0'
+    compile 'com.android.support:design:25.4.0'
+    testCompile 'junit:junit:4.12'
+
+    compile 'com.tapadoo.android:alerter:2.0.1'
+
+    compile 'com.android.support:support-compat:25.4.0'
+
+    compile 'com.daimajia.easing:library:2.0@aar'
+    compile 'com.daimajia.androidanimations:library:2.3@aar'
+
+    compile 'com.android.volley:volley:1.0.0'
+
+    compile 'com.github.vlad1m1r990:Lemniscate:1.2.0'
+
+    compile 'com.yarolegovich:lovely-dialog:1.0.7'
+
+    compile 'com.code-troopers.betterpickers:library:3.1.0'
+
+    implementation 'am.appwise.components:NoInternetDialog:1.1.1'
+
+    compile 'com.github.glomadrian:Grav:1.1'
+
+    compile 'com.github.nisrulz:sensey:1.6.1'
+
+    compile 'com.fujiyuu75:sequent:0.2.1'
+
+}

@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Know iT</string>
+    <string name="title_activity_scrolling_facts">Fact iT</string>
+    <string name="title_favorite_activity">Favorites</string>
+    <string name="alertTitle">No Facts</string>
+    <string name="alertBody">Internet unavailable, please enable wifi or mobile data</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_favorite">Favorites</string>
+
+
+    <string name="dialogTitle">Number</string>
+    <string name="dialogInfo">Enter only a valid number</string>
+
+    <string name="text_input_error_message">Not a valid number</string>
+    <string name="invalidNumber">Invalid</string>
+
+
+    <string name="QuestMode">Quest Mode</string>
+    <string name="quest_info">Start a quest, enter a number and get surprised</string>
+    <string name="trivia">Trivia</string>
+    <string name="math">Math</string>
+    <string name="year">Year</string>
+    <string name="date">Date</string>
+
+    <string name="facts_unlocked_info_text">Facts Unlocked</string>
+
+    <!-- Facts leader text list -->
+    <string name="beginner">Beginner</string>
+    <string name="expert">Expert</string>
+    <string name="wizard">Wizard</string>
+
+    <string name="circle">
+        M527.023,71.8233 C780.213,71.8233,985.464,277.075,985.464,530.265
+        C985.464,783.455,780.213,988.707,527.023,988.707
+        C273.832,988.707,68.5809,783.455,68.5809,530.265
+        C68.5809,277.075,273.832,71.8233,527.023,71.8233 Z
+    </string>
+    <integer name="circle_original_width">1200</integer>
+    <integer name="circle_original_height">1200</integer>
+    <string name="title_activity_test_activity">test_activity</string>
+
+</resources>
