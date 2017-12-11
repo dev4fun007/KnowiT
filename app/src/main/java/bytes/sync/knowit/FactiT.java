@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
@@ -14,6 +15,7 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.daimajia.androidanimations.library.Techniques;
@@ -48,11 +50,15 @@ public class FactiT extends AppCompatActivity {
 
     private boolean isFirstCardViewTurn = true;
     private String category;
+    private boolean isQuestModeEnabled = false;
 
     ShakeDetector.ShakeListener shakeListener;
+    Vibrator vibrator;
 
     Realm realm;
     static String currentFact = "";
+
+    LinearLayout bottomBarLinearLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +73,7 @@ public class FactiT extends AppCompatActivity {
 
         cardView1 = (CardView) findViewById(R.id.info_cardView_1);
         cardView2 = (CardView) findViewById(R.id.info_cardView_2);
-
+        bottomBarLinearLayout = (LinearLayout) findViewById(R.id.bottomBar_linearLayout);
 
         //Setup Realm
         Realm.init(this);
@@ -183,6 +189,7 @@ public class FactiT extends AppCompatActivity {
         gravView = (GravView) findViewById(R.id.progress_gravView);
         gravView.setVisibility(GONE);
 
+        vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
         Sensey.getInstance().init(this);
         shakeListener = new ShakeDetector.ShakeListener() {
             @Override
@@ -191,8 +198,11 @@ public class FactiT extends AppCompatActivity {
                 //Change the cardview turn
                 isFirstCardViewTurn = !isFirstCardViewTurn;
 
-                //Fetch the next fact
-                fetchFacts();
+                if(!isQuestModeEnabled) {
+                    //Fetch the next fact
+                    fetchFacts();
+                    vibrator.vibrate(100);
+                }
             }
 
             @Override
@@ -293,7 +303,12 @@ public class FactiT extends AppCompatActivity {
 
     private void shareIntent()
     {
-        String facts = factsTextView.getText().toString();
+        String facts = "";
+        if(isFirstCardViewTurn)
+            facts = factsTextView.getText().toString();
+        else
+            facts = factsTextView2.getText().toString();
+
         Intent sendIntent = new Intent();
         sendIntent.setAction(Intent.ACTION_SEND);
         sendIntent.putExtra(Intent.EXTRA_TEXT, facts);
@@ -316,14 +331,24 @@ public class FactiT extends AppCompatActivity {
         String digitOrDate = bundle.getString(Constants.DIGIT_OR_DATE);
         String category = bundle.getString(Constants.CATEGORY);
         this.category = category;
-
+        isQuestModeEnabled = isQuestModeOn;
         if (!isQuestModeOn) {
+            bottomBarLinearLayout.setWeightSum(3f);
             nextImageButton.setVisibility(View.VISIBLE);
             fetchFacts();
         } else {
-            FetchResults.getQuestFacts(category, digitOrDate, this, factsTextView);
+            gravView.setVisibility(VISIBLE);
             //Quest mode is on, so hide the next button
             nextImageButton.setVisibility(GONE);
+            bottomBarLinearLayout.setWeightSum(2f);
+
+            if(isFirstCardViewTurn)
+                FetchResults.getQuestFacts(category, digitOrDate, this, factsTextView);
+            else
+                FetchResults.getQuestFacts(category, digitOrDate, this, factsTextView2);
+
+            //Stop Shake listener for quest mode
+            Sensey.getInstance().stopShakeDetection(shakeListener);
         }
     }
 

@@ -5,6 +5,7 @@ import android.app.job.JobScheduler;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -73,14 +74,30 @@ public class MainActivity extends AppCompatActivity implements CalendarDatePicke
         twitterFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openUrl(Constants.TWITTER_URL);
+                //openUrl(Constants.TWITTER_URL);
+                Intent intent = null;
+                try {
+                    // get the Twitter app if possible
+                    MainActivity.this.getPackageManager().getPackageInfo("com.twitter.android", 0);
+                    intent = new Intent(Intent.ACTION_VIEW, Uri.parse("twitter://user?user_id=sync_bytes"));
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    MainActivity.this.startActivity(intent);
+                } catch (Exception e) {
+                    // no Twitter app, revert to browser
+                    //intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/USERID_OR_PROFILENAME"));
+                    openUrl(Constants.TWITTER_URL);
+                }
             }
         });
         facebookFab = (FloatingActionButton) findViewById(R.id.facebook_fab);
         facebookFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openUrl(Constants.FACEBOOK_URL);
+                //openUrl(Constants.FACEBOOK_URL);
+                Intent facebookIntent = new Intent(Intent.ACTION_VIEW);
+                String facebookUrl = getFacebookPageURL(MainActivity.this);
+                facebookIntent.setData(Uri.parse(facebookUrl));
+                startActivity(facebookIntent);
             }
         });
         emailFab = (FloatingActionButton) findViewById(R.id.email_fab);
@@ -177,7 +194,7 @@ public class MainActivity extends AppCompatActivity implements CalendarDatePicke
     {
         //QuestMode is on, show input dialog
         new LovelyTextInputDialog(MainActivity.this)
-                .setTopColorRes(R.color.colorAccent)
+                .setTopColorRes(R.color.colorPrimaryDark)
                 .setTitle(R.string.dialogTitle)
                 .setInputType(InputType.TYPE_CLASS_NUMBER)
                 .setInputFilter(R.string.text_input_error_message, new LovelyTextInputDialog.TextFilter() {
@@ -323,6 +340,47 @@ public class MainActivity extends AppCompatActivity implements CalendarDatePicke
         }
     }
 
+
+
+    public static String getFacebookPageURL(Context context)
+    {
+        final String FACEBOOK_PAGE_ID = "188620611599191";
+        final String FACEBOOK_URL = "syncbytes";
+
+        if(appInstalledOrNot(context, "com.facebook.katana"))
+        {
+            try
+            {
+                return "fb://page/" + FACEBOOK_PAGE_ID;
+            }
+            catch(Exception e)
+            {
+                return "fb://facewebmodal/f?href=" + FACEBOOK_URL;
+            }
+        }
+        else
+        {
+            return FACEBOOK_URL;
+        }
+
+    }
+
+
+    private static boolean appInstalledOrNot(Context context, String uri)
+    {
+        PackageManager pm = context.getPackageManager();
+        try
+        {
+            pm.getPackageInfo(uri, PackageManager.GET_ACTIVITIES);
+            return true;
+        }
+        catch(PackageManager.NameNotFoundException e)
+        {
+            Log.d(TAG,"Facebook app not installed", e);
+        }
+
+        return false;
+    }
 
 
     @Override
