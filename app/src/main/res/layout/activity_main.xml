@@ -32,7 +32,7 @@
                 android:background="@android:color/transparent"
                 android:padding="5dp"
                 android:scaleType="fitCenter"
-                android:src="@drawable/year" />
+                android:src="@drawable/ic_year" />
 
             <TextView
                 android:id="@+id/year_textView2"

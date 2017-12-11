@@ -192,11 +192,15 @@ public class MainActivity extends AppCompatActivity implements CalendarDatePicke
 
     private void showDialogAndStartActivity(final String category)
     {
+        String topTitle = String.valueOf(category.charAt(0)).toUpperCase() + category.substring(1);
         //QuestMode is on, show input dialog
         new LovelyTextInputDialog(MainActivity.this)
                 .setTopColorRes(R.color.colorPrimaryDark)
+                .setTopTitle(topTitle)
+                .setTopTitleColor(R.color.colorWhite)
                 .setTitle(R.string.dialogTitle)
                 .setInputType(InputType.TYPE_CLASS_NUMBER)
+                .setConfirmButtonColor(R.color.colorPrimaryDark)
                 .setInputFilter(R.string.text_input_error_message, new LovelyTextInputDialog.TextFilter() {
                     @Override
                     public boolean check(String text) {
@@ -282,17 +286,17 @@ public class MainActivity extends AppCompatActivity implements CalendarDatePicke
     {
         factsNumberTextView.setText(String.valueOf(factsUnlocked));
 
-        if(factsUnlocked >= 0 && factsUnlocked <5)
+        if(factsUnlocked >= 0 && factsUnlocked <10)
         {
             factsLeaderImage.setImageResource(R.drawable.beginner);
             factsLevelTextView.setText(R.string.beginner);
         }
-        else if(factsUnlocked >= 5 && factsUnlocked <10)
+        else if(factsUnlocked >= 10 && factsUnlocked <25)
         {
             factsLeaderImage.setImageResource(R.drawable.expert);
             factsLevelTextView.setText(R.string.expert);
         }
-        else if(factsUnlocked >= 10)
+        else if(factsUnlocked >= 25)
         {
             factsLeaderImage.setImageResource(R.drawable.wizard);
             factsLevelTextView.setText(R.string.wizard);

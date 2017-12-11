@@ -53,6 +53,7 @@ public class FactiT extends AppCompatActivity {
     private boolean isQuestModeEnabled = false;
 
     ShakeDetector.ShakeListener shakeListener;
+    private boolean isShakeActive = false;
     Vibrator vibrator;
 
     Realm realm;
@@ -195,6 +196,10 @@ public class FactiT extends AppCompatActivity {
             @Override
             public void onShakeDetected() {
                 Log.d(TAG,"Shake detected");
+                //Previous shake is still active, so return
+                if(isShakeActive) return;
+
+                isShakeActive = true;
                 //Change the cardview turn
                 isFirstCardViewTurn = !isFirstCardViewTurn;
 
@@ -208,6 +213,7 @@ public class FactiT extends AppCompatActivity {
             @Override
             public void onShakeStopped() {
                 Log.d(TAG,"Shake stopped");
+                isShakeActive =false;
             }
         };
     }

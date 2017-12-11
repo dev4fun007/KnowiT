@@ -33,4 +33,6 @@ public class Constants {
     public static final int BOTTOM_FAB_DELAY = 250;
     public static final int BOTTOM_FAB_DURATION = 750;
 
+    public static final String APP_KEY = "c71c50b0bc80a09adc17ab050516d6db16a9dadfc2b6b6f8";
+
 }

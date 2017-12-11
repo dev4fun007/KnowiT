@@ -59,7 +59,7 @@ public class FactsAdapter extends RecyclerView.Adapter<FactsViewHolder> {
         else if("date".equals(category))
             holder.categoryImageView.setImageResource(R.drawable.date);
         else if("year".equals(category))
-            holder.categoryImageView.setImageResource(R.drawable.year);
+            holder.categoryImageView.setImageResource(R.drawable.ic_year);
 
 
         if(category != null && !category.isEmpty())
