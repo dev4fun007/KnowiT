@@ -6,365 +6,420 @@
     android:layout_height="match_parent"
     tools:context="bytes.sync.knowit.MainActivity">
 
-
-    <android.support.v7.widget.CardView
-        android:id="@+id/year_card_view"
-        android:layout_width="150dp"
-        android:layout_height="110dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/math_card_view">
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/white">
-
-            <ImageButton
-                android:id="@+id/year_imageView"
-                android:layout_width="72dp"
-                android:layout_height="72dp"
-                android:layout_alignParentStart="false"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_margin="0dp"
-                android:background="@android:color/transparent"
-                android:padding="5dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_year" />
-
-            <TextView
-                android:id="@+id/year_textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/year_imageView"
-                android:foregroundGravity="center_vertical|center_horizontal|center"
-                android:gravity="center"
-                android:text="@string/year"
-                android:textColor="@android:color/black"
-                android:textSize="18sp" />
-
-
-        </RelativeLayout>
-
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        android:id="@+id/facts_leaderboard_card_view"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorPrimary">
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/facts_quest_relativeLayout">
 
-            <ImageView
-                android:id="@+id/facts_leader_imageView"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:padding="4dp"
-                android:src="@drawable/beginner" />
+            <RelativeLayout
+                android:id="@+id/cards_relativeLayout"
+                android:layout_width="275dp"
+                android:layout_height="225dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp">
 
-            <TextView
-                android:id="@+id/facts_leader_textView"
+                <android.support.v7.widget.CardView
+                    android:id="@+id/year_card_view"
+                    android:layout_width="125dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignTop="@+id/date_card_View"
+                    android:layout_marginEnd="9dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignTop="@+id/trivia_card_view"
+                        android:background="@android:color/white"
+                        android:visibility="visible">
+
+                        <ImageButton
+                            android:id="@+id/year_imageView"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_alignParentStart="false"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_margin="0dp"
+                            android:background="@android:color/transparent"
+                            android:padding="5dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_year" />
+
+                        <TextView
+                            android:id="@+id/year_textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/year_imageView"
+                            android:foregroundGravity="center_vertical|center_horizontal|center"
+                            android:gravity="center"
+                            android:text="@string/year"
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp" />
+
+                    </RelativeLayout>
+
+                </android.support.v7.widget.CardView>
+
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/trivia_card_view"
+                    android:layout_width="125dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignStart="@+id/year_card_view"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="8dp"
+                    app:cardCornerRadius="4dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorWhite"
+                        android:visibility="visible">
+
+                        <ImageButton
+                            android:id="@+id/trivia_imageView"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_alignParentStart="false"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_margin="0dp"
+                            android:background="@android:color/transparent"
+                            android:padding="5dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/trivia" />
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/trivia_imageView"
+                            android:foregroundGravity="center_vertical|center_horizontal|center"
+                            android:gravity="center"
+                            android:text="@string/trivia"
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp" />
+
+
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/math_card_view"
+                    android:layout_width="125dp"
+                    android:layout_height="100dp"
+                    android:layout_alignStart="@+id/date_card_View"
+                    android:layout_alignTop="@+id/trivia_card_view">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"
+                        android:background="@color/colorWhite"
+                        android:visibility="visible">
+
+                        <ImageButton
+                            android:id="@+id/math_imageView"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_alignParentStart="false"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_margin="0dp"
+                            android:background="@android:color/transparent"
+                            android:padding="5dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/math"
+                            tools:layout_editor_absoluteX="0dp"
+                            tools:layout_editor_absoluteY="0dp" />
+
+                        <TextView
+                            android:id="@+id/math_textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/math_imageView"
+                            android:foregroundGravity="center_vertical|center_horizontal|center"
+                            android:gravity="center"
+                            android:text="@string/math"
+                            android:textColor="@color/cardview_dark_background"
+                            android:textSize="18sp" />
+                    </RelativeLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/date_card_View"
+                    android:layout_width="125dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/white"
+                        android:visibility="visible">
+
+                        <ImageButton
+                            android:id="@+id/date_imageView"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_alignParentStart="false"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_margin="0dp"
+                            android:background="@android:color/transparent"
+                            android:padding="5dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/date" />
+
+                        <TextView
+                            android:id="@+id/date_textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/date_imageView"
+                            android:foregroundGravity="center_vertical|center_horizontal|center"
+                            android:gravity="center"
+                            android:text="@string/date"
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp" />
+                    </RelativeLayout>
+
+
+                </android.support.v7.widget.CardView>
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/bottom_action_button_relativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:layout_marginBottom="0dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:paddingBottom="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/twitter_fab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/email_fab"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toStartOf="@+id/email_fab"
+                    android:scaleType="center"
+                    android:src="@drawable/twitter"
+                    app:backgroundTint="@color/twitterColor"
+                    app:elevation="10dp"
+                    app:fabSize="normal" />
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/email_fab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="10dp"
+                    android:src="@android:drawable/ic_dialog_email"
+                    app:backgroundTint="@color/colorPrimary"
+                    app:elevation="10dp"
+                    app:fabSize="normal" />
+
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/facebook_fab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/email_fab"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/email_fab"
+                    android:scaleType="center"
+                    android:src="@drawable/facebook"
+                    app:backgroundTint="@color/facebookColor"
+                    app:elevation="10dp"
+                    app:fabSize="normal" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/facts_quest_relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/facts_leaderboard_card_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="10dp"
-                android:layout_toEndOf="@+id/facts_leader_imageView"
-                android:text="@string/beginner"
-                android:textColor="@color/colorAccent"
-                android:textSize="18sp" />
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/facts_leader_unlocked_textView"
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary">
+
+                    <ImageView
+                        android:id="@+id/facts_leader_imageView"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:padding="4dp"
+                        android:src="@drawable/beginner" />
+
+                    <TextView
+                        android:id="@+id/facts_leader_textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toEndOf="@+id/facts_leader_imageView"
+                        android:text="@string/beginner"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/facts_leader_unlocked_textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/facts_leader_unlocked_info_textView"
+                        android:layout_alignBottom="@+id/facts_leader_unlocked_info_textView"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toEndOf="@+id/facts_leader_unlocked_info_textView"
+                        android:text="@string/facts_unlocked_info_text"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        android:id="@+id/facts_leader_unlocked_info_textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/facts_leader_textView"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@+id/facts_leader_imageView"
+                        android:gravity="right"
+                        android:text="@string/beginner"
+                        android:textColor="@android:color/white" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/quest_card_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/facts_leader_unlocked_info_textView"
-                android:layout_alignBottom="@+id/facts_leader_unlocked_info_textView"
-                android:layout_marginLeft="5dp"
-                android:layout_toEndOf="@+id/facts_leader_unlocked_info_textView"
-                android:text="@string/facts_unlocked_info_text"
-                android:textColor="@android:color/white" />
+                android:layout_below="@id/facts_leaderboard_card_view"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="5dp">
 
-            <TextView
-                android:id="@+id/facts_leader_unlocked_info_textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/facts_leader_textView"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_toEndOf="@+id/facts_leader_imageView"
-                android:gravity="right"
-                android:text="@string/beginner"
-                android:textColor="@android:color/white" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:id="@+id/quest_leader_imageView"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:padding="4dp"
+                        android:src="@drawable/quest" />
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/quest_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:checked="true" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/quest_leader_imageView"
+                        android:orientation="vertical"
+                        android:layout_toLeftOf="@id/quest_switch">
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toEndOf="@+id/quest_leader_imageView"
+                            android:text="@string/QuestMode"
+                            android:textColor="@android:color/white" />
+
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/textView"
+                            android:layout_toEndOf="@+id/quest_leader_imageView"
+                            android:text="@string/quest_info"
+                            android:textColor="@android:color/white"
+                            android:textSize="11sp" />
+
+                    </LinearLayout>
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
 
         </RelativeLayout>
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        android:id="@+id/quest_card_view"
-        android:layout_width="0dp"
-        android:layout_height="64dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/facts_leaderboard_card_view">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorPrimary">
-
-            <ImageView
-                android:id="@+id/quest_leader_imageView"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:padding="4dp"
-                android:src="@drawable/quest" />
-
-            <android.support.v7.widget.SwitchCompat
-                android:id="@+id/quest_switch"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="10dp"
-                android:checked="true" />
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/textView"
-                android:layout_toEndOf="@+id/quest_leader_imageView"
-                android:text="@string/quest_info"
-                android:textColor="@android:color/white"
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_toEndOf="@+id/quest_leader_imageView"
-                android:text="@string/QuestMode"
-                android:textColor="@android:color/white" />
-
-        </RelativeLayout>
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        android:id="@+id/trivia_card_view"
-        android:layout_width="150dp"
-        android:layout_height="110dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
-        app:cardCornerRadius="4dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quest_card_view">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorWhite">
-
-            <ImageButton
-                android:id="@+id/trivia_imageView"
-                android:layout_width="72dp"
-                android:layout_height="72dp"
-                android:layout_alignParentStart="false"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_margin="0dp"
-                android:background="@android:color/transparent"
-                android:padding="5dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/trivia" />
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/trivia_imageView"
-                android:foregroundGravity="center_vertical|center_horizontal|center"
-                android:gravity="center"
-                android:text="@string/trivia"
-                android:textColor="@android:color/black"
-                android:textSize="18sp" />
-
-
-        </RelativeLayout>
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        android:id="@+id/math_card_view"
-        android:layout_width="150dp"
-        android:layout_height="110dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quest_card_view">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorWhite">
-
-            <ImageButton
-                android:id="@+id/math_imageView"
-                android:layout_width="72dp"
-                android:layout_height="72dp"
-                android:layout_alignParentStart="false"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_margin="0dp"
-                android:background="@android:color/transparent"
-                android:padding="5dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/math"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="0dp" />
-
-            <TextView
-                android:id="@+id/math_textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/math_imageView"
-                android:foregroundGravity="center_vertical|center_horizontal|center"
-                android:gravity="center"
-                android:text="@string/math"
-                android:textColor="@color/cardview_dark_background"
-                android:textSize="18sp" />
-
-
-        </RelativeLayout>
-
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        android:id="@+id/date_card_View"
-        android:layout_width="150dp"
-        android:layout_height="110dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/trivia_card_view">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@android:color/white">
-
-            <ImageButton
-                android:id="@+id/date_imageView"
-                android:layout_width="72dp"
-                android:layout_height="72dp"
-                android:layout_alignParentStart="false"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_margin="0dp"
-                android:background="@android:color/transparent"
-                android:padding="5dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/date" />
-
-            <TextView
-                android:id="@+id/date_textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/date_imageView"
-                android:foregroundGravity="center_vertical|center_horizontal|center"
-                android:gravity="center"
-                android:text="@string/date"
-                android:textColor="@android:color/black"
-                android:textSize="18sp" />
-
-
-        </RelativeLayout>
-
-    </android.support.v7.widget.CardView>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="84dp"
-        android:layout_marginBottom="0dp"
-        android:paddingBottom="0dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:id="@+id/bottom_action_button_relativeLayout">
-
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/twitter_fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/email_fab"
-            android:layout_marginEnd="10dp"
-            android:layout_toStartOf="@+id/email_fab"
-            android:backgroundTint="@color/twitterColor"
-            android:scaleType="center"
-            android:src="@drawable/twitter"
-            app:elevation="10dp"
-            app:fabSize="normal" />
-
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/email_fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:layout_gravity="bottom"
-            android:backgroundTint="@color/colorPrimary"
-            android:src="@android:drawable/ic_dialog_email"
-            app:elevation="10dp"
-            app:fabSize="normal"/>
-
-
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/facebook_fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/email_fab"
-            android:layout_gravity="bottom"
-            android:layout_marginStart="10dp"
-            android:layout_toEndOf="@+id/email_fab"
-            android:backgroundTint="@color/facebookColor"
-            android:scaleType="center"
-            android:src="@drawable/facebook"
-            app:elevation="10dp"
-            app:fabSize="normal" />
 
     </RelativeLayout>
-
 
 </android.support.constraint.ConstraintLayout>
